@@ -3,10 +3,10 @@
   "name": "PromptSaver",
   "version": "1.0",
   "description": "A tool to manage and save prompts.",
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": [],
   "background": {
     "service_worker": "background.js"
   }

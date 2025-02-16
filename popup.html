@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PromptSaver</title>
+  <title>Textorium</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 10px;
-      width: 300px;
+      margin: 0;
+      padding: 10px;
+      width: 400px;  /* 横幅はそのまま */
+      height: 600px; /* たとえば高さ600pxに固定 */
+      overflow-y: auto; /* はみ出したら縦スクロールバーを表示 */
     }
-    .prompt-item {
+    .snippet-item {
       border: 1px solid #ccc;
       margin-bottom: 8px;
       padding: 8px;
     }
-    .prompt-item h3 {
+    .snippet-item h3 {
       margin: 0 0 4px 0;
     }
     .hidden {
@@ -27,21 +30,37 @@
       margin-right: 4px;
       font-size: 0.9em;
     }
+    /* Responsive design 
+    @media (max-width: 350px) {
+      body {
+        width: 100%;
+        padding: 5px;
+      }
+      input, textarea, button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+      */
   </style>
 </head>
 <body>
-  <h2>PromptSaver</h2>
+  <h2>Textorium</h2>
 
-  <!-- Add New Prompt Form -->
+  <!-- Add New Snippet Form -->
   <div>
-    <h4>Add New Prompt</h4>
+    <h4>Add New Snippet</h4>
     <input type="text" id="title" placeholder="Title" />
     <br /><br />
-    <input type="text" id="tags" placeholder="Tags (comma-separated)" />
+    <label for="tagName">Tag Name:</label>
+    <input type="text" id="tagName" placeholder="e.g., meeting" />
     <br /><br />
-    <textarea id="content" placeholder="Enter your prompt here..." rows="3" cols="30"></textarea>
+    <label for="tagCategory">Tag Category:</label>
+    <input type="text" id="tagCategory" placeholder="e.g., work" />
     <br /><br />
-    <button id="savePromptBtn">Save Prompt</button>
+    <textarea id="content" placeholder="Enter your snippet text here..." rows="3" cols="30"></textarea>
+    <br /><br />
+    <button id="saveSnippetBtn">Save Snippet</button>
   </div>
   <hr />
 
@@ -51,11 +70,24 @@
     <input type="text" id="searchInput" placeholder="Search by title or content" />
     <button id="searchBtn">Search</button>
     <button id="clearSearchBtn">Clear</button>
+    <br /><br />
+    <button id="filterFavoritesBtn">Show Favorites Only</button>
+    <button id="clearFilterBtn">Clear Filter</button>
   </div>
   <hr />
 
-  <!-- Prompt List -->
-  <div id="promptList"></div>
+  <!-- Snippet List -->
+  <div id="snippetList"></div>
+
+  <hr />
+
+  <!-- Export / Import Section -->
+  <div id="dataTransferSection">
+    <button id="exportBtn">Export Snippets</button>
+    <br /><br />
+    <label for="importInput">Import Snippets (JSON):</label>
+    <input type="file" id="importInput" accept="application/json" />
+  </div>
 
   <script src="popup.js"></script>
 </body>

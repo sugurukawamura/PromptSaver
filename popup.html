@@ -1,14 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Prompt Saver</title>
-    <script src="popup.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>PromptSaver</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      width: 300px;
+    }
+    .prompt-item {
+      border: 1px solid #ccc;
+      margin-bottom: 8px;
+      padding: 8px;
+    }
+    .prompt-item h3 {
+      margin: 0 0 4px 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .tag {
+      background-color: #efefef;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-right: 4px;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
-    <h2>Prompt Saver</h2>
-    <input type="text" id="promptInput" placeholder="Enter your prompt">
-    <button id="savePrompt">Save</button>
-    <ul id="promptList"></ul>
+  <h2>PromptSaver</h2>
+
+  <!-- Add New Prompt Form -->
+  <div>
+    <h4>Add New Prompt</h4>
+    <input type="text" id="title" placeholder="Title" />
+    <br /><br />
+    <input type="text" id="tags" placeholder="Tags (comma-separated)" />
+    <br /><br />
+    <textarea id="content" placeholder="Enter your prompt here..." rows="3" cols="30"></textarea>
+    <br /><br />
+    <button id="savePromptBtn">Save Prompt</button>
+  </div>
+  <hr />
+
+  <!-- Search and Filter -->
+  <div>
+    <h4>Search / Filter</h4>
+    <input type="text" id="searchInput" placeholder="Search by title or content" />
+    <button id="searchBtn">Search</button>
+    <button id="clearSearchBtn">Clear</button>
+  </div>
+  <hr />
+
+  <!-- Prompt List -->
+  <div id="promptList"></div>
+
+  <script src="popup.js"></script>
 </body>
 </html>

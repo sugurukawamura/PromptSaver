@@ -1,61 +1,46 @@
-# Prompt Saver
+# Textorium
 
-Prompt Saver is a Chrome extension designed to help you save, manage, and quickly insert prompts into any text area on a web page. Whether you're writing emails, filling out forms, or composing messages, this tool allows you to keep your favorite prompts handy.
+Textorium is a Chrome extension designed to manage and save text snippets, prompts, ideas, and more—all locally on your device.
 
 ## Features
 
-- **Prompt Management**  
-  Easily add, view, and manage your saved prompts via the extension's popup.
-
-- **Universal Text Area Insertion**  
-  Automatically detects text areas on any website and adds an "Insert Prompt" button for quick prompt insertion.
-
-- **Simple and Intuitive UI**  
-  Designed for ease of use so you can access your saved prompts whenever you need them.
-
-## File Structure
-
-- `manifest.json`  
-  The Chrome extension manifest file (Manifest V3 compliant).
-
-- `background.js`  
-  Handles the initial setup (saving default prompts) and listens for messages to retrieve prompts from storage.
-
-- `content.js`  
-  Detects text areas on the page and dynamically inserts a button and prompt selector UI for prompt insertion.
-
-- `popup.html` & `popup.js`  
-  The extension's popup interface for adding and listing saved prompts.
+- **Add and Edit Snippets**  
+  Save text snippets with detailed tag information (Tag Name and Tag Category) along with titles and content.
+  
+- **Favorites Functionality**  
+  Mark your frequently used snippets as favorites for quick access.
+  
+- **Search and Filter**  
+  Easily search snippets by title or content, and filter by favorites.
+  
+- **Export/Import**  
+  Export your snippets as a JSON file for backup or sharing, and import them back when needed.
+  
+- **Responsive Design**  
+  The extension popup is designed to be responsive and now features an improved width for better usability on larger screens.
 
 ## Installation
 
-1. Clone or download this repository:
-
-    ```bash
-    git clone https://github.com/your-username/Prompt-Saver.git
-    ```
-
-2. Open Chrome and go to [chrome://extensions](chrome://extensions).
-
-3. Enable "Developer mode" using the toggle in the upper-right corner.
-
-4. Click "Load unpacked" and select the cloned/downloaded folder.
-
-5. Once installed, when you visit any website with a text area, an **"📝 Insert Prompt"** button will appear near the text area, allowing you to quickly insert your saved prompts.
+1. Clone or download the repository.
+2. Open Chrome and navigate to `chrome://extensions`.
+3. Enable "Developer mode" in the top-right corner.
+4. Click "Load unpacked" and select the repository folder.
+5. The extension "Textorium" will appear in your extensions list.
 
 ## Usage
 
-1. **Saving a Prompt**  
-   Click the extension icon in the Chrome toolbar to open the popup. Enter your prompt in the input field and click the **Save** button to add it to your list.
+1. Click the extension icon to open the popup.
+2. Add a new snippet by entering a title, tag details (Name and Category), and the content.
+3. Save your snippet.
+4. Use the search bar to find snippets or filter by favorites.
+5. Export your snippets as a JSON file for backup or import them later.
 
-2. **Inserting a Prompt**  
-   Click the **"📝 Insert Prompt"** button that appears near a text area on any website. A dropdown menu will display your saved prompts—select one, and it will be inserted into the text area.
+## Future Enhancements
 
-## Notes
-
-- The extension targets any text area on a web page. Depending on the website structure, it might not always detect the intended text area.
-- The UI is kept simple by design. Feel free to enhance it with custom CSS to better suit your needs.
+- Further tag categorization and management.
+- Advanced text formatting and rich text editing.
+- Cloud synchronization (planned for future versions).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+[MIT License](LICENSE)

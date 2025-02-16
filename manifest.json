@@ -1,12 +1,14 @@
 {
   "manifest_version": 3,
   "name": "PromptSaver",
-  "version": "1.0",
-  "description": "A tool to manage and save prompts.",
-  "permissions": ["storage"],
+  "version": "1.0.0",
+  "description": "A tool to manage and save prompts locally.",
   "action": {
     "default_popup": "popup.html"
   },
+  "permissions": [
+    "storage"
+  ],
   "background": {
     "service_worker": "background.js"
   }
